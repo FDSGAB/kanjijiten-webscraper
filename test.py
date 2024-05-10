@@ -34,7 +34,7 @@ def get_full_readings(text : str) -> list:
 
 #url = 'https://kanjitisiki.com/syogako/syogaku3/040.html'
 entry_dict = dict()
-url = 'https://kanjitisiki.com/syogako/syogaku5/166.html'
+url = 'https://kanjitisiki.com/jis4/0295.html'
 page = requests.get(url)
 soup = BeautifulSoup(page.content, "html.parser")
 content = soup.body.find(id = "main")
@@ -217,12 +217,5 @@ except:
 
 
 
-name_readings_list = entry_dict['名乗り訓'].split('」「')
-name_readings_list[0] = name_readings_list[0][1:]
-name_readings_list[len(name_readings_list)-1] = name_readings_list[len(name_readings_list)-1][:len(name_readings_list[len(name_readings_list)-1])-1]
-print(name_readings_list)
-
-
-#input()
-
-#print(readings_list)
+for info in entry_dict.items():
+    print(info)

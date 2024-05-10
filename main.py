@@ -12,14 +12,16 @@ class KanjiInfoFetcher():
     headers= {'user-agent': 
           'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 OPR/107.0.0.0',
           'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
-          'accept-encoding': 'gzip, deflate, br',
+          #'accept-encoding': 'gzip, deflate, br',
           'accept-language': 'ja,pt-BR;q=0.9,pt;q=0.8,en-US;q=0.7,en;q=0.6'}
     
 
     def __init__(self) -> None:
         self.read_urls()
         self.create_all_files()
+        counter = int(1)
         for url in self.url_list:
+            print("Run number: " + str(counter) + ", Current URL: ", url)
             self.entry_dict = dict()
             self.page_content = self.fetch_page_content_by_url(url)
             self.soup = self.html_page_parser(page_content = self.page_content)
@@ -28,6 +30,7 @@ class KanjiInfoFetcher():
             self.secondary_infos = self.main_content.find_all('h2')
             self.fetch_infos()
             self.write_in_csvs()
+            counter = counter + 1
             """ for info in self.entry_dict.items():
                 print(info) """    
 
@@ -37,13 +40,18 @@ class KanjiInfoFetcher():
 
 
     def fetch_page_content_by_url(self, url : str) -> bytes:
-        session = requests.Session()
-        retry = Retry(connect=3, backoff_factor=0.5)
+        """ session = requests.Session()
+        retry = Retry(total=None, connect=10000, read=10000, backoff_factor=0.5)
         adapter = HTTPAdapter(max_retries=retry)
         session.mount('http://', adapter)
         session.mount('https://', adapter)
-        page = session.get(url)
-        return page.content
+        page = session.get(url) """
+        while True:
+            try:
+                page = requests.get(url=url, headers=self.headers)
+                if page.url == url:
+                    return page.content
+            except: pass
 
     def html_page_parser(self, page_content : bytes) -> BeautifulSoup:
         return BeautifulSoup(page_content, "html.parser")
