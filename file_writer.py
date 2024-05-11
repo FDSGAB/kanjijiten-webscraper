@@ -1,81 +1,59 @@
 import csv
-
-def create_readings_file():
-    with open('kanjireadings.csv', encoding='UTF-8', mode='w') as readings_file:
-        readings_writer = csv.writer(readings_file, delimiter=',', quotechar='"', lineterminator='\n')
-        readings_writer.writerow(['漢字','音訓','読み方','表内読み'])
-
-def create_general_info_file():
-    with open('kanjigeneralinfo.csv', encoding='UTF-8', mode='w') as general_file:
-        general_writer = csv.writer(general_file, delimiter=',', quotechar='"', lineterminator='\n')
-        general_writer.writerow(['漢字', '説明', '画数', '部首', '区点コード', 'Unicode', '漢字検定対象級', '成り立ち', '分類', '分類2', '習う学年', 'JIS漢字水準' ,'補足'])
-
-def create_meaning_file():
-    with open('kanjimeaning.csv', encoding='UTF-8', mode='w') as meaning_file:
-        meaning_writer = csv.writer(meaning_file, delimiter=',', quotechar='"', lineterminator='\n')
-        meaning_writer.writerow(['漢字', '意味'])
-
-def create_variant_file():
-    with open('kanjivariant.csv', encoding='UTF-8', mode='w') as variant_file:
-        variant_writer = csv.writer(variant_file, delimiter=',', quotechar='"', lineterminator='\n')
-        variant_writer.writerow(['漢字', '異体字'])
+from print_colors import bcolors
 
 
-def create_misc_file():
-    with open('kanjimisc.csv', encoding='UTF-8', mode='w') as misc_file:
-        misc_writer = csv.writer(misc_file, delimiter=',', quotechar='"', lineterminator='\n')
-        misc_writer.writerow(['漢字', '解説・構成'])
+class FileWriter ():
 
-def create_name_readings_file():
-    with open('kanjinamereadings.csv', encoding='UTF-8', mode='w') as name_readings_file:
-        name_readings_writer = csv.writer(name_readings_file, delimiter=',', quotechar='"', lineterminator='\n')
-        name_readings_writer.writerow(['漢字', '名乗り訓'])
+    firstrow_dictionary = {
+                            'kanjireadings.csv' : ['漢字','音訓','読み方','表内読み'],
+                            'kanjigeneralinfo.csv' : ['漢字', '説明', '画数', '部首', '区点コード', 'Unicode', '漢字検定対象級', '成り立ち', '分類', '分類2', '習う学年', 'JIS漢字水準' ,'補足'],
+                            'kanjimeaning.csv' : ['漢字', '意味'],
+                            'kanjivariant.csv' : ['漢字', '異体字'],
+                            'kanjimisc.csv' : ['漢字', '解説・構成'],
+                            'kanjinamereadings.csv' : ['漢字', '名乗り訓'],
+                            'relatedkanji.csv' : ['漢字', '関連項目']
+                        }
 
-def create_related_entries_file():
-    with open('relatedkanji.csv', encoding='UTF-8', mode='w') as related_entries_file:
-        related_entries_writer = csv.writer(related_entries_file, delimiter=',', quotechar='"', lineterminator='\n')
-        related_entries_writer.writerow(['漢字', '関連項目'])
+    def create_csv_file(self, file_name : str, firstrow : list):
+        with open(file_name, encoding='UTF-8', mode='w') as readings_file:
+            readings_writer = csv.writer(readings_file, delimiter=',', quotechar='"', lineterminator='\n')
+            readings_writer.writerow(firstrow)
+            readings_file.close()
+
+    def create_all_csv_files(self):
+        for file in self.firstrow_dictionary.items():
+            self.create_csv_file(file[0], file[1])
 
 
+    def write_entry(self, file_name : str, line : list):
+        while True:
+            try:
+                with open(file_name, encoding='UTF-8', mode='a') as file:
+                    writer = csv.writer(file, delimiter=',', quotechar='"', lineterminator='\n')
+                    writer.writerow(line)
+                    file.close()
+                    break
+            except PermissionError:
+                print(bcolors.WARNING + "PERMISSION ERROR OCURRED!!!!" + bcolors.ENDC)
+                continue
 
-###############################################################
-"""
-SEPARATOR
-"""
-###############################################################
 
-def write_readings_entry(line : list):
-    with open('kanjireadings.csv', encoding='UTF-8', mode='a') as readings_file:
-        readings_writer = csv.writer(readings_file, delimiter=',', quotechar='"', lineterminator='\n')
-        readings_writer.writerow(line)
+    def delete_the_last_x_rows_of_file(self, file_string : str, x : int):
+        if x <= 0: return
+        file = open(file_string, encoding='UTF-8', mode = "r")
+        lines = file.readlines()
+        lines = lines[:-x]
+        file.close()
+        file = open(file_string, encoding='UTF-8', mode = "w")
+        file.writelines(lines)
+        file.close()
 
-def write_general_info_entry(line : list):
-    with open('kanjigeneralinfo.csv', encoding='UTF-8', mode='a') as general_file:
-        general_writer = csv.writer(general_file, delimiter=',', quotechar='"', lineterminator='\n')
-        general_writer.writerow(line)
+    def create_log_txt(self):
+        file = open('log.txt', encoding='UTF-8', mode = "w")
+        file.write("LOG:\n")
+        file.close()
 
-def write_meaning_entry(line : list):
-    with open('kanjimeaning.csv', encoding='UTF-8', mode='a') as meaning_file:
-        meaning_writer = csv.writer(meaning_file, delimiter=',', quotechar='"', lineterminator='\n')
-        meaning_writer.writerow(line)
-
-def write_variant_entry(line : list):
-    with open('kanjivariant.csv', encoding='UTF-8', mode='a') as variant_file:
-        variant_writer = csv.writer(variant_file, delimiter=',', quotechar='"', lineterminator='\n')
-        variant_writer.writerow(line)
-
-def write_misc_entry(line : list):
-    with open('kanjimisc.csv', encoding='UTF-8', mode='a') as misc_file:
-        misc_writer = csv.writer(misc_file, delimiter=',', quotechar='"', lineterminator='\n')
-        misc_writer.writerow(line)
-
-def write_name_readings_entry(line : list):
-    with open('kanjinamereadings.csv', encoding='UTF-8', mode='a') as name_readings_file:
-        name_readings_writer = csv.writer(name_readings_file, delimiter=',', quotechar='"', lineterminator='\n')
-        name_readings_writer.writerow(line)
-
-def write_related_entries_entry(line : list):
-    with open('relatedkanji.csv', encoding='UTF-8', mode='a') as related_entries_file:
-        related_entries_writer = csv.writer(related_entries_file, delimiter=',', quotechar='"', lineterminator='\n')
-        related_entries_writer.writerow(line)
-
+    def write_in_log_txt(self, string : str):
+        file = open('log.txt', encoding='UTF-8', mode = "a")
+        file.write(string)
+        file.close()

@@ -34,7 +34,7 @@ def get_full_readings(text : str) -> list:
 
 #url = 'https://kanjitisiki.com/syogako/syogaku3/040.html'
 entry_dict = dict()
-url = 'https://kanjitisiki.com/jis4/0295.html'
+url = 'https://kanjitisiki.com/jis1/013.html'
 page = requests.get(url)
 soup = BeautifulSoup(page.content, "html.parser")
 content = soup.body.find(id = "main")

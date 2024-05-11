@@ -1,1 +1,22 @@
 罪 - generalInfo
+瑩 - misc
+璨 - misc
+開 - readings
+嫗 - readings
+槝 - readings
+https://kanjitisiki.com/tyugako/tyugaku04/153.html - duplicate https?
+
+MISC file
+頓,頁（おおがい・いちのかい）に屯
+頓,2010年11月30日に常用漢字に追加されました。
+
+NAME readings
+頓,はや
+
+readings
+頓,訓,ぬかず,く,表外読み
+頓,訓,とど,まる,表外読み
+頓,訓,とみ,に,表外読み
+頓,訓,つまず,く,表外読み
+頓,訓,ひたぶる,,表外読み
+頓,音,トン,,表内読み

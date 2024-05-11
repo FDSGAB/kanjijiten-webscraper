@@ -1,0 +1,29 @@
+LOG:
+Error in 娉 found in: kanjimeaning.csv
+Entries in csv: 1
+Entries found: 4
+ERROR IN Run number: 3453, URL: https://kanjitisiki.com/jis2/2-1/783.html
+Error in 槝 found in: kanjimisc.csv
+Entries in csv: 0
+Entries found: 1
+ERROR IN Run number: 4140, URL: https://kanjitisiki.com/jis2/2-2/430.html
+Error in 覬 found in: kanjimisc.csv
+Entries in csv: 0
+Entries found: 1
+ERROR IN Run number: 5520, URL: https://kanjitisiki.com/jis2/2-3/591.html
+Error in 貊 found in: kanjimisc.csv
+Entries in csv: 0
+Entries found: 1
+ERROR IN Run number: 5626, URL: https://kanjitisiki.com/jis2/2-3/690.html
+Error in 韉 found in: kanjimisc.csv
+Entries in csv: 0
+Entries found: 1
+ERROR IN Run number: 7508, URL: https://kanjitisiki.com/jis3/1070.html
+Error in 扡 found in: kanjimisc.csv
+Entries in csv: 0
+Entries found: 1
+ERROR IN Run number: 8173, URL: https://kanjitisiki.com/jis4/0388.html
+Error in 鑭 found in: kanjimisc.csv
+Entries in csv: 0
+Entries found: 1
+ERROR IN Run number: 9729, URL: https://kanjitisiki.com/jis4/2166.html
