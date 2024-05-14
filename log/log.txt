@@ -1,0 +1,85 @@
+LOG:
+Error in 土 found in: data/kanjimeaning.csv
+Entries in csv: 5
+Entries found: 9
+ERROR IN Run number: 295, URL: https://kanjitisiki.com/syogako/syogaku1/63.html
+Error in 瑯 found in: data/kanjimeaning.csv
+Entries in csv: 0
+Entries found: 2
+ERROR IN Run number: 1273, URL: https://kanjitisiki.com/jis2/2-2/762.html
+Error in 蕢 found in: data/kanjireadings.csv
+Entries in csv: 1
+Entries found: 3
+ERROR IN Run number: 1719, URL: https://kanjitisiki.com/jis4/1785.html
+Error in 齠 found in: data/kanjigeneralinfo.csv
+Entries in csv: 0
+Entries found: 1
+ERROR IN Run number: 1942, URL: https://kanjitisiki.com/jis2/2-4/196.html
+Error in 岬 found in: data/kanjimeaning.csv
+Entries in csv: 0
+Entries found: 2
+ERROR IN Run number: 2106, URL: https://kanjitisiki.com/tyugako/tyugaku07/014.html
+Error in 侖 found in: data/kanjimeaning.csv
+Entries in csv: 0
+Entries found: 2
+ERROR IN Run number: 2453, URL: https://kanjitisiki.com/jis2/2-1/367.html
+Error in 竜 found in: data/kanjireadings.csv
+Entries in csv: 1
+Entries found: 3
+ERROR IN Run number: 2721, URL: https://kanjitisiki.com/tyugako/tyugaku09/019.html
+Error in 史 found in: data/kanjivariant.csv
+Entries in csv: 0
+Entries found: 1
+ERROR IN Run number: 2861, URL: https://kanjitisiki.com/syogako/syogaku4/082.html
+Error in 桅 found in: data/kanjireadings.csv
+Entries in csv: 1
+Entries found: 2
+ERROR IN Run number: 3132, URL: https://kanjitisiki.com/jis4/0991.html
+Error in 郝 found in: data/kanjimeaning.csv
+Entries in csv: 0
+Entries found: 1
+ERROR IN Run number: 3312, URL: https://kanjitisiki.com/jis3/0977.html
+Error in 𡈽 found in: data/kanjireadings.csv
+Entries in csv: 1
+Entries found: 3
+ERROR IN Run number: 3351, URL: https://kanjitisiki.com/jis3/0035.html
+Error in 但 found in: data/kanjimisc.csv
+Entries in csv: 0
+Entries found: 1
+ERROR IN Run number: 4145, URL: https://kanjitisiki.com/tyugako/tyugaku04/026.html
+Error in 鮴 found in: data/kanjireadings.csv
+Entries in csv: 0
+Entries found: 2
+ERROR IN Run number: 4636, URL: https://kanjitisiki.com/jis2/2-1/012.html
+Error in 踣 found in: data/kanjimeaning.csv
+Entries in csv: 0
+Entries found: 2
+ERROR IN Run number: 5099, URL: https://kanjitisiki.com/jis3/0951.html
+Error in 蒺 found in: data/kanjimisc.csv
+Entries in csv: 0
+Entries found: 1
+ERROR IN Run number: 5229, URL: https://kanjitisiki.com/jis3/0860.html
+Error in 豚 found in: data/kanjivariant.csv
+Entries in csv: 0
+Entries found: 1
+ERROR IN Run number: 5895, URL: https://kanjitisiki.com/tyugako/tyugaku04/152.html
+Error in 拯 found in: data/kanjigeneralinfo.csv
+Entries in csv: 0
+Entries found: 1
+ERROR IN Run number: 6598, URL: https://kanjitisiki.com/jis2/2-2/159.html
+Error in 膿 found in: data/kanjimeaning.csv
+Entries in csv: 0
+Entries found: 2
+ERROR IN Run number: 6930, URL: https://kanjitisiki.com/jis1/213.html
+Error in 佾 found in: data/kanjimisc.csv
+Entries in csv: 0
+Entries found: 1
+ERROR IN Run number: 6978, URL: https://kanjitisiki.com/jis3/0182.html
+Error in 枢 found in: data/kanjinamereadings.csv
+Entries in csv: 0
+Entries found: 1
+ERROR IN Run number: 8916, URL: https://kanjitisiki.com/tyugako/tyugaku03/204.html
+Error in 椀 found in: data/kanjinamereadings.csv
+Entries in csv: 0
+Entries found: 1
+ERROR IN Run number: 9257, URL: https://kanjitisiki.com/zinmei/244.html

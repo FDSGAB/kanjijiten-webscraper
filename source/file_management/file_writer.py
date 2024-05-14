@@ -1,17 +1,17 @@
 import csv
-from print_colors import bcolors
+from style.print_colors import bcolors
 
 
 class FileWriter ():
 
     firstrow_dictionary = {
-                            'kanjireadings.csv' : ['漢字','音訓','読み方','表内読み'],
-                            'kanjigeneralinfo.csv' : ['漢字', '説明', '画数', '部首', '区点コード', 'Unicode', '漢字検定対象級', '成り立ち', '分類', '分類2', '習う学年', 'JIS漢字水準' ,'補足'],
-                            'kanjimeaning.csv' : ['漢字', '意味'],
-                            'kanjivariant.csv' : ['漢字', '異体字'],
-                            'kanjimisc.csv' : ['漢字', '解説・構成'],
-                            'kanjinamereadings.csv' : ['漢字', '名乗り訓'],
-                            'relatedkanji.csv' : ['漢字', '関連項目']
+                            'data/kanjireadings.csv' : ['漢字','音訓','読み方','表内読み'],
+                            'data/kanjigeneralinfo.csv' : ['漢字', '説明', '画数', '部首', '区点コード', 'Unicode', '漢字検定対象級', '成り立ち', '分類', '分類2', '習う学年', 'JIS漢字水準' ,'補足'],
+                            'data/kanjimeaning.csv' : ['漢字', '意味'],
+                            'data/kanjivariant.csv' : ['漢字', '異体字'],
+                            'data/kanjimisc.csv' : ['漢字', '解説・構成'],
+                            'data/kanjinamereadings.csv' : ['漢字', '名乗り訓'],
+                            'data/relatedkanji.csv' : ['漢字', '関連項目']
                         }
 
     def create_csv_file(self, file_name : str, firstrow : list):
@@ -49,11 +49,11 @@ class FileWriter ():
         file.close()
 
     def create_log_txt(self):
-        file = open('log.txt', encoding='UTF-8', mode = "w")
+        file = open('log/log.txt', encoding='UTF-8', mode = "w")
         file.write("LOG:\n")
         file.close()
 
     def write_in_log_txt(self, string : str):
-        file = open('log.txt', encoding='UTF-8', mode = "a")
+        file = open('log/log.txt', encoding='UTF-8', mode = "a")
         file.write(string)
         file.close()

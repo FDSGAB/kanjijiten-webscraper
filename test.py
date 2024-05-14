@@ -34,7 +34,7 @@ def get_full_readings(text : str) -> list:
 
 #url = 'https://kanjitisiki.com/syogako/syogaku3/040.html'
 entry_dict = dict()
-url = 'https://kanjitisiki.com/jis1/013.html'
+url = 'https://kanjitisiki.com/tyugako/tyugaku01/007.html'
 page = requests.get(url)
 soup = BeautifulSoup(page.content, "html.parser")
 content = soup.body.find(id = "main")
@@ -136,6 +136,10 @@ for element in secondary_infos:
         radical = next_content.find('img')['alt']
         entry_dict.update({"部首":radical})
         continue
+    if element.text == "補足":
+        footnote = next_content.get_text()
+        entry_dict.update({"補足" : footnote})
+        continue
     print(element.text,next_content)
 for element in terciary_infos:
     next_content = element.find_next()
@@ -168,6 +172,10 @@ for element in terciary_infos:
         for i in range(0,len(titles),1):
             info_dict.update({titles[i].text: codes[i].text})
         entry_dict.update({"分類":info_dict})
+        continue
+    if element.text == "補足":
+        footnote = next_content.get_text()
+        entry_dict.update({"補足" : footnote})
         continue
     print(element.text,next_content)
 
@@ -214,6 +222,12 @@ try:
     entry_dict['補足']
 except:
     entry_dict.update({'補足': None})
+
+while True:
+    try:
+       entry_dict['解説・構成'].remove(entry_dict['補足']) 
+    except:
+        break
 
 
 
