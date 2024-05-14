@@ -2,7 +2,7 @@
 Webscraper to get kanji information from the site: https://kanjitisiki.com
 
 ## About the Project
-This webscraper was build to gather kanji data and store it in .csv files which can be later used to design a database of kanji for cataloging kanji, create applications or other personal/enterprise uses.
+This webscraper was build to gather kanji data and store it in .csv files which can be later used to design a database of kanji for cataloging kanji, create applications or other personal/enterprise uses. The main goal of the project which is to gather information from the reference site (https://kanjitisiki.com) was accomplished, so, althought the code may need revisions, they probably be implemented in another web scraping project in which a frequently update site is used for reference. Take this project as a test.
 
 ## Project Motivations
 First, it is always an interesting reminder that the "japanese alphabet" does not consinst of a small set of letters like the alphabets that are latin based. It has over 3000 distinct character used in daily life and around 30,000 characters in total. Although most of these character are never used or have very rare occurences, it is always necessary to have them cataloged just in case it appears somewhere. Also, each letter has one or more meanings and also a set of possible readings (chinese readings and japanese readings).
